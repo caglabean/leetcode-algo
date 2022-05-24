@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int romanToInt(char *s)
 {
@@ -55,10 +56,18 @@ int romanToInt(char *s)
 
 int main()
 {
-    // char arr[] = "MCMXCIV";
-    //  char arr[] = "III";
-    char arr[] = "LVIII";
 
+    char arr[] = "LVIII";
     printf("Input: %s\n", arr);
     printf("Output: %d\n", romanToInt(arr));
+
+    strcpy(arr, "MCMXCIV");
+    printf("Input: %s\n", arr);
+    printf("Output: %d\n", romanToInt(arr));
+
+    strcpy(arr, "III");
+    printf("Input: %s\n", arr);
+    printf("Output: %d\n", romanToInt(arr));
+
+    return 0;
 }

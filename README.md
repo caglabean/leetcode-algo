@@ -1,2 +1,2 @@
 # leetcode-practice
-This repo has my submissions for the leetcode problems. I started doing them using C, plan to continue with C++ and Java.
+This repo contains my submissions for the leetcode problems. I've started practicing these problems using C and plan to continue using C++ and Python.

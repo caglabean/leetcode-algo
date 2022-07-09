@@ -8,3 +8,17 @@ then immediately sell it on the same day.
 
 Find and return the maximum profit you can achieve.
 '''
+class Solution:
+    def maxProfit(self, prices: int) -> int:
+        max_profit=0
+        for i in range(len(prices)-1):
+            if (prices[i+1]> prices[i]):
+                max_profit += prices[i+1]-prices[i]
+        return max_profit
+
+        
+        
+                
+s = Solution()
+print(s.maxProfit([7,1,5,3,6,4]))
+print(s.maxProfit([1, 7, 2, 3, 6, 7, 6, 7]))

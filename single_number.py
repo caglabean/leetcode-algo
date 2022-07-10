@@ -8,8 +8,12 @@ complexity and use only constant extra space.
 
 class Solution:
     def singleNumber(self, nums: int) -> int:
-                
-
+        # Check if number at current index exists in 
+        # the rest of the list starting from next index
+        for num in nums:
+            if num not in nums[nums.index(num)+1:]:
+                return num
+    
 
 s = Solution()
 print(s.singleNumber([2,2,1]))

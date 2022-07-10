@@ -1,5 +1,6 @@
-class Solution():
-    def isBadVersion(self, n: int) -> int:
+class Solution:
+    @staticmethod
+    def isBadVersion(n: int) -> int:
         if n == 0:
             return False
         return True
@@ -20,7 +21,7 @@ class Solution():
 
 def main():
     s = Solution()
-    print("First bad version was published on the " + str(s.firstBadVersion(9, [0, 0, 0, 1, 1, 1, 1, 1, 1])) + ". day.")
+    print("First bad version: " + str(s.firstBadVersion(9, [0, 0, 0, 1, 1, 1, 1, 1, 1])) + ". day")
 
 
 if __name__ == '__main__':

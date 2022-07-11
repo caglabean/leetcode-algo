@@ -49,9 +49,14 @@ class Solution:
 
 
 def main():
-    s = "MCMXCIV"
+    s1 = "MCMXCIV"
+    s2 = "LVIII"
+    s3 = "III"
+
     a = Solution()
-    print(a.romanToInt(s))
+    print(a.romanToInt(s1))
+    print(a.romanToInt(s2))
+    print(a.romanToInt(s3))
 
 
 if __name__ == '__main__':

@@ -6,25 +6,33 @@ where k is non-negative.
 
 class Solution:
     def rotate(self, nums: list, k: int) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        '''
-        1,2,3,4,5,6,7
-        k=3
-        5,6,7,1,2,3,4
-        '''
         # In case k is bigger than size of array, get remainder to
         # iterate the list
+        temp = []
+        for num in nums:
+            temp.append(num)
+
         k %= len(nums)
 
-        return nums[len(nums)-k:]+nums[:len(nums)-k]
+        temp = nums[len(nums) - k:] + nums[:len(nums) - k]
+        for i in range(len(nums)):
+            nums[i] = temp[i]
+
 
 def main():
     s = Solution()
-    print(s.rotate([-1, -100, 3, 99], 2))
-    print(s.rotate([1, 2, 3, 4, 5, 6, 7], 3))
-    print(s.rotate([1, 3, 5, 7, 9], 2))
+
+    l1 = [-1, -100, 3, 99]
+    l2 = [1, 2, 3, 4, 5, 6, 7]
+    l3 = [1, 3, 5, 7, 9]
+
+    s.rotate(l1, 2)
+    s.rotate(l2, 3)
+    s.rotate(l3, 2)
+
+    print(l1)
+    print(l2)
+    print(l3)
 
 
 if __name__ == '__main__':

@@ -6,10 +6,11 @@ return an array of the squares of each number sorted in non-decreasing order.
 
 class Solution:
     def sortedSquares(self, nums: list) -> list:
-
+        # Get squares
         for i in range(len(nums)):
             nums[i] = nums[i] * nums[i]
 
+        # Sort array
         for i in range(len(nums)):
             for j in range(i + 1, len(nums)):
                 if nums[i] >= nums[j]:

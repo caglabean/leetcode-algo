@@ -10,16 +10,29 @@ An input string is valid if:
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        open_parentheses = ['(', '[', '{']
-        close_parentheses = [')', ']', '}']
-        i = 0
-        while i < len(s) - 1:
-            if s[i + 1] in close_parentheses and open_parentheses.index(s[i]) == close_parentheses.index(s[i + 1]):
-                i += 2
+        stack = []
+        index = 0
 
+        paren_dict = {
+         '(': ')',
+         '{': '}',
+         '[': ']'
+        }
+
+        while index < len(s) and len(s)>1:
+            if s[index] in paren_dict:
+                stack.append(s[index])
             else:
-                return False
-        return True
+                if len(stack)==0:
+                    return False
+                elif len(stack)>0 and paren_dict[stack.pop()] != s[index]:
+                    return False
+
+            index += 1
+
+        if len(stack)==0 and len(s) > 1:
+            return True
+        return False
 
 
 def main():
@@ -28,12 +41,14 @@ def main():
     s3 = "(]"
     s4 = "([)]"
     s5 = "{[]}"
+    s6 = "["
     sol = Solution()
     print(sol.isValid(s1))  # True
     print(sol.isValid(s2))  # True
     print(sol.isValid(s3))  # False
     print(sol.isValid(s4))  # False
     print(sol.isValid(s5))  # True
+    print(sol.isValid(s6))  # False
 
 
 if __name__ == '__main__':
